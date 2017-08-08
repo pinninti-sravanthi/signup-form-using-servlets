@@ -9,7 +9,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 @SuppressWarnings("serial")
 public class SignUpFormServlet1 extends HttpServlet {
@@ -18,7 +17,7 @@ public class SignUpFormServlet1 extends HttpServlet {
 			resp.setContentType("text/html");
 
 			PrintWriter out = resp.getWriter();
-			String name = req.getParameter("userName");
+			// String name = req.getParameter("userName");
 			String email = req.getParameter("email");
 			String userPass = req.getParameter("userPass");
 			String phonenumber = req.getParameter("phonenumber");
@@ -68,8 +67,9 @@ public class SignUpFormServlet1 extends HttpServlet {
 			// HttpSession session = req.getSession();
 			// session.setAttribute("name", name);
 			// out.print("<a href='servlet2'>visit</a>");
+
 			if (matcher.matches() && matcher2.matches() && matcher3.matches()) {
-				req.getRequestDispatcher("SignUpFormServlet2").forward(req, resp);
+				req.getRequestDispatcher("/SignUpFormServlet2").forward(req, resp);
 
 			}
 
